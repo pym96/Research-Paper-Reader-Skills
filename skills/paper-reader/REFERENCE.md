@@ -26,6 +26,17 @@ Ask:
 - Where does a new object appear before it is motivated?
 - Which claim depends on an argument that never gets written down?
 - What comparison or boundary condition is implied but not defined?
+- Does the evidence match the claim type: factual, causal, or value?
+- Is an analogy being used as evidence instead of intuition?
+
+### Counter-argument lens
+
+Ask:
+- What would a skeptical reviewer attack first?
+- Which alternative explanation would fit the results as well or better?
+- Are the limitations genuine vulnerabilities or ritual concessions?
+- Does the discussion pass the best-explanation test?
+- Does the paper turn local inductive evidence into a universal claim?
 
 ### Engineering-translation lens
 
@@ -55,10 +66,15 @@ Ask:
 - Reader asked to infer why a result matters
 - Residual branch or auxiliary module described as if it were a full method
 - Limitation buried instead of stated structurally
+- Correlation or local examples written as causal proof
+- Analogy used as evidence rather than motivation
+- Discussion forces a preferred explanation while ignoring simpler rivals
+- Limitation section lists harmless caveats instead of reviewer-relevant threats
 
 ## Suggested invocation patterns
 
 - "Use paper-reader in elevator-pitch mode on this abstract."
 - "Use paper-reader to find logic gaps in this method section."
+- "Use paper-reader counter-argument on this discussion and limitations section."
 - "Use paper-reader signpost-check on these experiment paragraphs."
 - "Use paper-reader engineer-translation on this implementation section."
