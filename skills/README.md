@@ -6,4 +6,6 @@ but should not interfere with the main LaTeX source tree.
 Current skill:
 
 - `paper-reader/`: a reader-first review skill for stress-testing abstract, introduction,
-  method, implementation, related work, and experiments through different reviewer lenses.
+  method, discussion, limitations, implementation, related work, and experiments through
+  elevator-pitch, logic-gap, counter-argument, signpost-check, and engineer-translation
+  reviewer lenses.

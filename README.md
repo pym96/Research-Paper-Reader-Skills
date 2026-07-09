@@ -15,6 +15,7 @@ These skills are designed to surface:
 - logic gaps
 - weak motivation
 - unclear contribution framing
+- reviewer objections and alternative explanations
 - implementation details that read like code comments
 - paragraphs with poor signposting
 
@@ -22,20 +23,27 @@ These skills are designed to surface:
 
 ### `paper-reader`
 
-A writing-review skill that critiques paper drafts through four explicit reader
+A writing-review skill that critiques paper drafts through five explicit reader
 lenses:
 
 1. `elevator-pitch`
    For `Title`, `Abstract`, and `Introduction`.
 
 2. `logic-gap`
-   For `Method`, formulas, and algorithm flow.
+   For `Method`, formulas, algorithm flow, claim-type mismatches, and
+   analogy-as-evidence failures.
 
-3. `engineer-translation`
-   For `Implementation Details`, optimization tricks, and systems prose.
+3. `counter-argument`
+   For `Discussion`, `Limitations`, and result interpretation. Builds a
+   reviewer threat model and tests whether the draft handles rival
+   explanations.
 
 4. `signpost-check`
-   For `Related Work`, `Experiments`, and long discussion sections.
+   For `Related Work`, long `Experiments`, rebuttal structure, and long
+   sections whose organization is hard to follow.
+
+5. `engineer-translation`
+   For `Implementation Details`, optimization tricks, and systems prose.
 
 ## Repository structure
 
@@ -53,6 +61,7 @@ Typical prompts:
 
 - `use paper-reader on this abstract`
 - `use paper-reader in logic-gap mode on this method section`
+- `use paper-reader counter-argument on this discussion and limitations section`
 - `use paper-reader engineer-translation on this implementation paragraph`
 - `use paper-reader signpost-check on these experiment paragraphs`
 
@@ -88,7 +97,24 @@ Expected behavior:
 
 - flag undefined variables or modules
 - point out skipped reasoning
+- separate factual, causal, and value claims before judging evidence
+- flag analogy, inspiration, or resemblance when it is doing proof-work
 - list the minimum fixes needed for reviewability
+
+### Discussion and limitations review
+
+Input:
+
+```text
+Use paper-reader counter-argument on this discussion and limitations section.
+```
+
+Expected behavior:
+
+- identify what a skeptical reviewer would attack
+- test whether the author's explanation is the best explanation for the evidence
+- flag ignored alternative explanations and superficial limitations
+- suggest ways to acknowledge and neutralize threats without weakening the core claim
 
 ### Experiments review
 
